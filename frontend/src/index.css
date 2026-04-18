@@ -1,0 +1,77 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red: #FF1A1A;
+  --red-dim: #CC0000;
+  --red-glow: rgba(255, 26, 26, 0.3);
+  --red-subtle: rgba(255, 26, 26, 0.08);
+  --bg: #050505;
+  --bg-1: #0A0A0A;
+  --bg-2: #111111;
+  --bg-3: #181818;
+  --border: rgba(255,26,26,0.15);
+  --border-bright: rgba(255,26,26,0.4);
+  --text: #F0F0F0;
+  --text-dim: #888;
+  --text-muted: #555;
+  --green: #00FF88;
+  --yellow: #FFB800;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-display);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb { background: var(--red-dim); border-radius: 2px; }
+
+/* Glow effects */
+.glow-red { box-shadow: 0 0 20px var(--red-glow), 0 0 60px rgba(255,26,26,0.1); }
+.glow-text { text-shadow: 0 0 20px var(--red-glow); }
+.glow-green { text-shadow: 0 0 15px rgba(0,255,136,0.5); }
+
+/* Pulse animation */
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--red-glow); }
+  50% { opacity: 0.7; box-shadow: 0 0 30px var(--red-glow), 0 0 60px rgba(255,26,26,0.2); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.8; }
+  97% { opacity: 1; }
+  98% { opacity: 0.9; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-fade { animation: fadeIn 0.4s ease forwards; }
+.animate-slide { animation: slideIn 0.3s ease forwards; }
