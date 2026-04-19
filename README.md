@@ -138,3 +138,6 @@ A cada nova campanha no mesmo nicho, o sistema consulta o histórico e melhora a
 ## SUPORTE
 
 Qualquer dúvida, abra uma issue ou entre em contato com a Erizon.
+=======
+# erizon-ai
+>>>>>>> origin/main
